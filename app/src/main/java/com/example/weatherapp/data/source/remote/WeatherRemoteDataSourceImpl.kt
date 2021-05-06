@@ -1,5 +1,6 @@
 package com.example.weatherapp.data.source.remote
 
+import com.example.weatherapp.BuildConfig
 import com.example.weatherapp.data.model.LocationModel
 import com.example.weatherapp.data.model.NetworkWeather
 import com.example.weatherapp.data.model.NetworkWeatherForecast
