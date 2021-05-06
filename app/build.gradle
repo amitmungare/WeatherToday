@@ -1,0 +1,120 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.weatherapp"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
+
+}
+
+dependencies {
+
+
+    implementation 'com.google.android.material:material:1.3.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
+    //Material Design
+    implementation "com.google.android.material:material:$materialVersion"
+
+    //Lifecycle Extensions
+    implementation "android.arch.lifecycle:extensions:$lifeCycleExtensionVersion"
+
+    //Room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+
+    //Kotlin Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    //Preferences
+    implementation "androidx.preference:preference-ktx:$preferencesVersion"
+
+    //Weather Image
+    implementation 'com.github.pwittchen:weathericonview:1.1.0'
+
+    //CalenderView
+    implementation "com.github.shrikanth7698:Collapsible-Calendar-View-Android:$calendarVersion"
+
+    //Google Play Services
+    implementation "com.google.android.gms:play-services-location:$googlePlayLocation"
+
+    //VegaLayoutManager
+    implementation "com.stone.vega.library:VegaLayoutManager:$vega_version"
+
+    //Lifecycle KTX
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //Algolia Search
+    implementation "com.algolia:instantsearch-android:$algolia_version"
+
+    //Paging Library
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
+    //Elastic view
+    implementation "com.github.skydoves:elasticviews:$elastic_version"
+
+    //WorkManager
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+
+}
